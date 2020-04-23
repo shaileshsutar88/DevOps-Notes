@@ -20,3 +20,34 @@ Features:
 16. AWS Storage Gateway can be used to enable a cloud storage architecture for on-prem applications to seamlessly connect on-premises environments to Amazon S3.
 17. AWS DataSync can be used to automate transferring data between on-premises storage and AWS which can transfer data at speeds up to 10 times faster than open-source tools.
 18. AWS Transfer for SFTP can be used to transfer files directly into and out of Amazon S3 using the Secure File Transfer Protocol.
+19. S3 Storage Classes can be configured at the object level, and a single bucket can contain objects stored across S3 Standard, S3 Intelligent-Tiering, S3 Standard-IA, and S3 One Zone-IA
+
+
+S3 Storage Classes:
+1. General Purpose S3 standard
+    Low latency and high throughput performance, Resilient against events that impact an entire Availability Zone, Supports SSL for data in transit and encryption of data at rest,
+    S3 Lifecycle management for automatic migration of objects to other S3 Storage Classes, Backed with AWS S3 SLA, Designed for 99.99% availability over a given year
+
+2. Unknown or Changing access S3 Intelligent-Tiering
+    Low latency and high throughput performance, Small monthly monitoring and auto-tiering fee, Automatically moves objects between two access tiers based on changing access patterns,
+    Backed with AWS S3 SLA, Supports SSL for data in transit and encryption of data at rest, S3 Lifecycle management for automatic migration of objects to other S3 Storage Classes,
+    Ideal storage class for long-lived data with access patterns that are unknown or unpredictable, A minimum eligible object size of 128KB for auto-tiering, Smaller objects may be
+    stored but will always be charged at the Frequent Access tier rates
+
+3. Infrequent access S3 standard IA
+    Standard-IA is for data that is accessed less frequently, but requires rapid access when needed, S3 Standard-IA ideal for long-term storage, backups, and as a data store for disaster recovery files
+    Designed for 99.9% availability over a given year, Backed with AWS S3 SLA,
+
+4. One Zone-Infrequent Access S3 One Zone-IA
+    S3 One Zone-IA stores data in a single AZ and costs 20% less than S3 Standard-IA, Ideal for lower-cost option for infrequently accessed data but do not require the availability and resilience of S3 Standard
+    Or S3 Standard-IA, S3 One Zone-IA stores data in a single AWS Availability Zone, data stored in this storage class will be lost in the event of Availability Zone destruction.
+
+5. Archive S3 Glacier
+    S3 Glacier is a secure, durable, and low-cost storage class for data archiving, To keep costs low yet suitable for varying needs, S3 Glacier provides three retrieval options that range from a few minutes to hours,
+    Configurable retrieval times, from minutes to hours, Low-cost design is ideal for long-term archive,
+
+6. S3 Glacier Deep Archive
+    Amazon S3’s lowest-cost storage class and supports long-term retention and digital preservation for data that may be accessed once or twice in a year, It is designed for highly-regulated industries, such as the
+    Financial Services, Healthcare, and Public Sectors — that retain data sets for 7-10 years or longer to meet regulatory compliance, Can also be used for backup and disaster recovery use cases, and is a
+    cost-effective and easy-to-manage alternative to magnetic tape systems, S3 Glacier Deep Archive are replicated and stored across at least three geographically-dispersed Availability Zones, Protected by
+    99.999999999% of durability, and can be restored within 12 hours.
