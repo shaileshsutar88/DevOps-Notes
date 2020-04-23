@@ -1,0 +1,22 @@
+Simple storage service
+
+Features:
+
+1. A single object can be up to 5 terabytes in size.
+2. Inventory can be configured to generate reports on a daily or a weekly basis.
+3. Objects can be accessed through S3 Access Points or directly through the bucket hostname.
+4. S3 Object Lock feature blocks object version deletion during a customer-defined retention period.
+5. To protect your data in Amazon S3, by default, users only have access to the S3 resources they create.
+6. S3 Block Public Access settings override other S3 access permissions, making it easy for the account administrator to enforce a “no public access” policy.
+7. S3 Access Points can be restricted to a Virtual Private Cloud (VPC), letting you easily firewall your S3 data within your private network.
+8. AWS Service Control Policies can be used to require that any new S3 Access Point in your organization is restricted to VPC-only access.
+9. Access Analyzer for S3 is used to evaluate your bucket access policies and enables you to discover and swiftly remediate buckets with potentially unintended access.
+10. Amazon Macie can be used to discover, classify, and protect sensitive data stored in Amazon S3.
+11. S3 Select is an S3 feature designed to increase query performance by up to 400%, and reduce querying costs as much as 80%.
+12. Amazon Athena queries your data in Amazon S3 without needing to extract and load it into a separate service or platform.
+13. Amazon Redshift Spectrum also runs SQL queries directly against data at rest in Amazon S3, and is more appropriate for complex queries and large data sets.
+14. Since Amazon Athena and Amazon Redshift share a common data catalog and data formats, you can use them both against the same data sets in Amazon S3.
+15. S3 Transfer Acceleration is designed to maximize transfer speeds to S3 buckets over long distances.
+16. AWS Storage Gateway can be used to enable a cloud storage architecture for on-prem applications to seamlessly connect on-premises environments to Amazon S3.
+17. AWS DataSync can be used to automate transferring data between on-premises storage and AWS which can transfer data at speeds up to 10 times faster than open-source tools.
+18. AWS Transfer for SFTP can be used to transfer files directly into and out of Amazon S3 using the Secure File Transfer Protocol.
