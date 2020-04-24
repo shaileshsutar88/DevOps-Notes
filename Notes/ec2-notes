@@ -98,6 +98,14 @@ Instance Features:
    Amazon EBS is a durable, block-level storage volume that you can attach to a single, running Amazon EC2 instance. You can use Amazon EBS as a primary storage device
    for data that requires frequent and granular updates. Many Amazon EC2 instances can also include storage from disks that are physically attached to the host computer.
    This disk storage is referred to as instance store. The data on an instance store volume persists only during the life of the associated Amazon EC2 instance.
-   
 
-2.
+
+3. EBS-optimized Instances
+4. Cluster Networking
+
+
+FAQ Notes:
+
+1. The On-Demand Instance limits for an AWS account are set on a per-region basis. Limits change over time. Amazon EC2 is constantly monitoring your usage within each region
+   and your limits are raised automatically based on your use of EC2.
+2. The vCPU-based limits only apply to running On-Demand instances.
