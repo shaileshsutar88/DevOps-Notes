@@ -66,3 +66,13 @@ Features:
 13. Flexible resource model
     You choose the amount of memory you want to allocate to your functions and AWS Lambda allocates proportional CPU power, network bandwidth
     and disk I/O.
+
+
+Facts:
+1. Each Lambda function receives 500MB of non-persistent disk space in its own /tmp directory.
+2. Inbound network connections are blocked by AWS Lambda, For outbound connections only TCP/IP and UDP/IP sockets are supported.
+3. ptrace (debugging) system calls are blocked. TCP port 25 traffic is also blocked as an anti-spam measure.
+4. Uploads must be no larger than 50MB (compressed)
+5. AWS Lambda functions can be configured to run up to 15 minutes per execution.
+6. Using Lambda@Edge and Amazon CloudFront allows you to execute logic across multiple AWS locations based on where your end viewers are located.
+7. AWS Lambda has a default safety throttle for number of concurrent executions per account per region.
