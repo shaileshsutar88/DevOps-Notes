@@ -1,0 +1,35 @@
+
+Features:
+
+1. Automatically scale in and out
+   Launch new Amazon EC2 instances seamlessly and automatically when demand increases, and terminate unneeded Amazon EC2 instances automatically
+   and save money when demand subsides.
+
+2. Choose when and how to scale
+   Scale dynamically based on your Amazon CloudWatch metrics, or predictably according to a schedule that you define. Receive notifications via
+   Amazon Simple Notification Service (Amazon SNS) to be alerted when you use Amazon CloudWatch alarms to initiate Amazon EC2 Auto Scaling actions,
+   or when EC2 Auto Scaling completes an action.
+
+3. Fleet management
+    Amazon EC2 Auto Scaling will automatically replace unhealthy or unreachable instances to maintain higher availability of your applications.
+    To automate fleet management for EC2 instances, EC2 Auto Scaling monitors the health of running instances, automatically replaces impaired
+    instances, and balances capacity across Availability Zones.
+
+4. Predictive Scaling
+   Predictive Scaling’s machine learning algorithms detect changes in daily and weekly patterns, automatically adjusting their forecasts.
+   This removes the need for manual adjustment of Auto Scaling parameters over time, making Auto Scaling simpler to configure and consume.
+
+
+AWS autoscaling
+
+Is used to manage scaling for multiple resources across multiple services.
+Lets you define dynamic scaling policies for multiple EC2 Auto Scaling groups or other resources using predefined scaling strategies.
+Should also be used to create predictive scaling for EC2 resources.
+Should be used to configure scaling policies for all of the scalable resources in your application is faster than managing scaling
+policies for each resource via its individual service console.
+
+
+EC2 Autoscaling
+
+Should be used only when you to need to scale Amazon EC2 Auto Scaling groups.
+Should be used when you need to set up scheduled or step scaling policies.
