@@ -1,0 +1,21 @@
+
+Introduction:
+Lightsail is an easy-to-use cloud platform that offers you everything needed to build an application or website,
+plus a cost-effective, monthly plan. Whether you’re new to the cloud or looking to get on the cloud quickly with AWS infrastructure.
+
+Features:
+1. Lightsail virtual servers
+   Lightsail offers virtual servers (instances) that are easy to set up and backed by the power and reliability of AWS. As you’re creating your
+   instance, Lightsail lets you click-to-launch a simple operating system (OS), a pre-configured application, or development stack - such as
+   WordPress, Windows, Plesk, LAMP, Nginx, and more.
+
+2. Simplified load balancing
+   Lightsail’s simplified load balancing routes web traffic across your instances so that your websites and applications can accommodate
+   variations in traffic, be better protected from outages, and deliver a seamless experience to your visitors. Additionally, Lightsail
+   load balancers include integrated certificate management, providing free SSL/TLS certificates that can be provisioned and added to a
+   load balancer in just a few clicks. You can request and manage certificates directly from the Lightsail console – and we manage renewals
+   on your behalf.
+
+3. Managed databases
+   Launch a fully configured MySQL or PostgreSQL database in minutes and leave the maintenance to Lightsail. With Lightsail managed databases,
+   you can easily scale your databases independently of your virtual servers. 
