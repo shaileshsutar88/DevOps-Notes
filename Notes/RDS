@@ -1,0 +1,60 @@
+RDS
+Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a relational database in the cloud. It provides
+cost-efficient and resizable capacity while automating time-consuming administration tasks such as hardware provisioning, database setup, patching
+and backups.
+
+
+Features:
+1. Lower administrative burden
+   Amazon RDS database instances are pre-configured with parameters and settings appropriate for the engine and class you have selected. You can
+   launch a database instance and connect your application within minutes. DB Parameter Groups provide granular control and fine-tuning of your
+   database.
+
+2. Automatic software patching
+   Amazon RDS will make sure that the relational database software powering your deployment stays up-to-date with the latest patches. You can
+   exert optional control over when and if your database instance is patched.
+
+3. Best practice recommendations
+   Amazon RDS provide best practice guidance by analyzing configuration and usage metrics from your database instances. Recommendations cover areas
+   such as database engine versions, storage, instance types, and networking. You can browse the available recommendations and perform a recommended
+   action immediately, schedule it for their next maintenance window, or dismiss it entirely.
+
+4. Performance
+   General Purpose Storage is an SSD-backed storage option delivers a consistent baseline of 3 IOPS per provisioned GB and provides the ability to
+   burst up to 3,000 IOPS above the baseline. This storage type is suitable for a broad range of database workloads.
+
+   Provisioned IOPS Storage is an SSD-backed storage option designed to deliver fast, predictable, and consistent I/O performance. You specify an
+   IOPS rate when creating a database instance, and Amazon RDS provisions that IOPS rate for the lifetime of the database instance. This storage type
+   is optimized for I/O-intensive transactional (OLTP) database workloads. You can provision up to 40,000 IOPS per database instance.
+
+5. Scalability
+   a. Push-button compute scaling
+      You can scale the compute and memory resources powering your deployment up or down, up to a maximum of 32 vCPUs and 244 GiB of RAM.
+      Compute scaling operations typically complete in a few minutes.
+
+   b. Easy storage scaling
+      As your storage requirements grow, you can also provision additional storage. The Amazon Aurora engine will automatically grow the size of your
+      database volume as your database storage needs grow, up to a maximum of 64 TB or a maximum you define. The MySQL, MariaDB, Oracle, and
+      PostgreSQL engines allow you to scale up to 64 TB of storage and SQL Server supports up to 16 TB. Storage scaling is on-the-fly with zero
+      downtime.
+
+   c. Read Replicas
+      Read Replicas make it easy to elastically scale out beyond the capacity constraints of a single DB instance for read-heavy database workloads.
+      You can create one or more replicas of a given source DB instance and serve high-volume application read traffic from multiple copies of your
+      data, thereby increasing aggregate read throughput.
+
+6. Availability and durability
+   a. Automated backups
+      The automated backup feature of Amazon RDS enables point-in-time recovery for your database instance. Amazon RDS will backup your database and
+      transaction logs and store both for a user-specified retention period. Your automatic backup retention period can be configured to up to
+      thirty-five days.
+
+   b. Database snapshots
+      Database snapshots are user-initiated backups of your instance stored in Amazon S3 that are kept until you explicitly delete them. You can
+      create a new instance from a database snapshots whenever you desire. Although database snapshots serve operationally as full backups, you are
+      billed only for incremental storage use.
+
+   c. Multi-AZ deployments
+      Amazon RDS Multi-AZ deployments provide enhanced availability and durability for database instances, making them a natural fit for production
+      database workloads. When you provision a Multi-AZ database instance, Amazon RDS synchronously replicates your data to a standby instance in a
+      different Availability Zone (AZ).
