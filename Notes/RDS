@@ -120,3 +120,5 @@ Limits:
 9. The creation of the standby, synchronous replication, and failover are all handled automatically. This means you cannot select the Availability
    Zone your standby is deployed in. Amazon RDS provisions one dedicated standby per DB instance primary.
 10. Backups must remain enabled for read replicas to work.
+11. Second tier read replica are supported for Amazon Aurora, Amazon RDS for MySQL and MariaDB only.
+12. Amazon RDS for PostgreSQL, Oracle and SQL Server: Read Replicas of Read Replicas are not currently supported.
