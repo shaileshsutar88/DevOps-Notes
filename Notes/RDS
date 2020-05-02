@@ -4,6 +4,18 @@ cost-efficient and resizable capacity while automating time-consuming administra
 and backups.
 
 
+What happens when I convert my RDS instance from Single-AZ to Multi-AZ?
+
+For the RDS for MySQL, MariaDB, PostgreSQL and Oracle database engines, when you elect to convert your RDS instance from Single-AZ to Multi-AZ, the
+following happens:
+A snapshot of your primary instance is taken
+A new standby instance is created in a different Availability Zone, from the snapshot
+Synchronous replication is configured between primary and standby instances
+As such, there should be no downtime incurred when an instance is converted from Single-AZ to Multi-AZ. However, you may see increased latency while
+the data on the standby is caught up to match to the primary.
+
+
+
 Features:
 1. Lower administrative burden
    Amazon RDS database instances are pre-configured with parameters and settings appropriate for the engine and class you have selected. You can
@@ -58,3 +70,53 @@ Features:
       Amazon RDS Multi-AZ deployments provide enhanced availability and durability for database instances, making them a natural fit for production
       database workloads. When you provision a Multi-AZ database instance, Amazon RDS synchronously replicates your data to a standby instance in a
       different Availability Zone (AZ).
+
+7. Automatic host replacement
+   Amazon RDS will automatically replace the compute instance powering your deployment in the event of a hardware failure.
+
+8. Security
+   a. Encryption at rest and in transit
+      Amazon RDS allows you to encrypt your databases using keys you manage through AWS Key Management Service (KMS). On a database instance running
+      with Amazon RDS encryption, data stored at rest in the underlying storage is encrypted, as are its automated backups, read replicas, and
+      snapshots. Amazon RDS supports Transparent Data Encryption in SQL Server and Oracle. Transparent Data Encryption in Oracle is integrated with
+      AWS CloudHSM, which allows you to securely generate, store, and manage your cryptographic keys in single-tenant Hardware Security Module (HSM)
+      appliances within the AWS cloud.
+
+   b. Network isolation
+      AWS recommends that you run your database instances in Amazon VPC, which allows you isolate your database in your own virtual network and
+      connect to your on-premises IT infrastructure using industry-standard encrypted IPsec VPNs. You can configure firewall settings and control
+      network access to your database instances.
+
+   c. Resource-level permissions
+      Amazon RDS is integrated with AWS Identity and Access Management (IAM) and provides you the ability to control the actions that your AWS IAM
+      users and groups can take on specific Amazon RDS resources, from database instances through snapshots, parameter groups, and option groups.
+      You can also tag your Amazon RDS resources and control the actions that your IAM users and groups can take on groups of resources that have
+      the same tag and associated value. For example, you can configure your IAM rules to ensure developers are able to modify "Development" database
+      instances, but only Database Administrators can make changes to "Production" database instances.
+
+9. Manageability
+   a. Monitoring and metrics
+      Amazon RDS provides Amazon CloudWatch metrics for your database instances at no additional charge. You can use the RDS Management Console to
+      view key operational metrics, including compute/memory/storage capacity utilization, I/O activity, and instance connections. Amazon RDS also
+      provides Enhanced Monitoring, which provides access to over 50 CPU, memory, file system, and disk I/O metrics, and Performance Insights,
+      an easy-to-use tool that helps you quickly detect performance problems.
+
+   b. Event Notifications
+      Amazon RDS can notify you via email or SMS text message of database events through Amazon SNS. You can use the AWS Management Console or the
+      Amazon RDS APIs to subscribe to over 40 different database events associated with your database instances.
+
+Limits:
+1. customers are allowed to have up to a total of 40 Amazon RDS DB instances. Of those 40, up to 10 can be Oracle or SQL Server DB instances under
+   the "License Included" model.
+2. Note that RDS for SQL Server has a limit of up to 100 databases on a single DB instance
+3. RDS for Oracle: 1 database per instance; no limit on number of schemas per database imposed by software
+4. RDS for SQL Server: Up to 100 databases per instance.
+5. Automated backups are deleted when the DB instance is deleted. Only manually created DB Snapshots are retained after the DB Instance is deleted.
+6. Migration of DB Instances from inside to outside VPC is not supported. For security reasons, a DB Snapshot of a DB Instance inside VPC cannot be
+   restored to outside VPC. The same is true with “Restore to Point in Time” functionality.
+7. With Multi-AZ deployments, replication is transparent: you do not interact directly with the standby, and it cannot be used to serve read traffic.
+8. a Multi-AZ standby cannot serve read requests. Multi-AZ deployments are designed to provide enhanced database availability and durability, rather
+   than read scaling benefits.
+9. The creation of the standby, synchronous replication, and failover are all handled automatically. This means you cannot select the Availability
+   Zone your standby is deployed in. Amazon RDS provisions one dedicated standby per DB instance primary.
+10. Backups must remain enabled for read replicas to work.
