@@ -1,0 +1,73 @@
+Route53
+Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service. Amazon Route 53 effectively connects user requests to
+infrastructure running in AWS – such as Amazon EC2 instances, Elastic Load Balancing load balancers, or Amazon S3 buckets – and can also be used to
+route users to infrastructure outside of AWS. You can use Amazon Route 53 to configure DNS health checks to route traffic to healthy endpoints or to
+independently monitor the health of your application and its endpoints.
+
+Routing policies supported by Route53:
+1. Weighted Round Robin (WRR)
+   Weighted Round Robin allows you to assign weights to resource record sets in order to specify the frequency with which different responses are
+   served. For instance, suppose you have two record sets associated with one DNS name—one with weight 3 and one with weight 1. In this case, 75% of
+   the time Route 53 will return the record set with weight 3 and 25% of the time Route 53 will return the record set with weight 1. Weights can be
+   any number between 0 and 255.
+
+2. Latency Based Routing (LBR)
+   LBR (Latency Based Routing) is a new feature for Amazon Route 53 that helps you improve your application’s performance for a global audience. You
+   can run applications in multiple AWS regions and Amazon Route 53, using dozens of edge locations worldwide, will route end users to the AWS region
+   that provides the lowest latency.
+
+3. Geo DNS
+   Route 53 Geo DNS lets you balance load by directing requests to specific endpoints based on the geographic location from which the request
+   originates. Geo DNS makes it possible to customize localized content, such as presenting detail pages in the right language or restricting
+   distribution of content to only the markets you have licensed. Geo DNS also lets you balance load across endpoints in a predictable,
+   easy-to-manage way, ensuring that each end-user location is consistently routed to the same endpoint.
+
+
+Features:
+1. Resolver
+   Get recursive DNS for your Amazon VPC and on-premises networks.
+
+2. Traffic flow
+   Easy-to-use and cost-effective global traffic management: route end users to the best endpoint for your application based on geoproximity, latency,
+   health.
+
+3. Latency based routing
+   Route end users to the AWS region that provides the lowest possible latency.
+
+4. Geo DNS
+   Route end users to a particular endpoint that you specify based on the end user’s geographic location.
+
+5. Private DNS for Amazon VPC
+   Manage custom domain names for your internal AWS resources without exposing DNS data to the public Internet.
+
+6. DNS Failover
+   Automatically route your website visitors to an alternate location to avoid site outages.
+
+7. Health Checks and Monitoring
+   Amazon Route 53 can monitor the health and performance of your application as well as your web servers and other resources.
+
+8. Domain Registration
+   Amazon Route 53 offers domain name registration services, where you can search for and register available domain names or transfer in existing
+   domain names to be managed by Route 53.
+
+9. CloudFront Zone Apex Support
+   When using Amazon CloudFront to deliver your website content, visitors to your website can now access your site at the zone apex (or "root domain").
+   For example, your site can be accessed as example.com instead of www.example.com
+
+10. S3 Zone Apex Support
+    Visitors to your website hosted on Amazon S3 can now access your site at the zone apex (or "root domain").
+
+11. Amazon ELB Integration
+    Amazon Route 53 is integrated with Elastic Load Balancing (ELB).
+
+12. Management Console
+    Amazon Route 53 works with the AWS Management Console. This web-based, point-and-click, graphical user interface lets you manage Amazon Route 53
+    without writing any code at all.
+
+13. Weighted Round Robin
+    Amazon Route 53 offers Weighted Round Robin (WRR) functionality.
+
+14. Queries to Alias records are free of charge and it can be created for zone apex. For e. g. example.com in www.example.com is zone apex.
+
+Limits:
+1. Amazon Route 53 does not support DNSSEC for DNS at this time. But Amazon Route 53 allows DNSSEC on domain registration.
