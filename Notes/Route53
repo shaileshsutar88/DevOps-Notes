@@ -4,6 +4,15 @@ infrastructure running in AWS – such as Amazon EC2 instances, Elastic Load Bal
 route users to infrastructure outside of AWS. You can use Amazon Route 53 to configure DNS health checks to route traffic to healthy endpoints or to
 independently monitor the health of your application and its endpoints.
 
+Amazon Route 53 is both an Authoritative DNS service and Recursive DNS service. Route 53 Resolver is a recursive DNS service.
+
+Points to remember:
+1. Route 53 automatically creates and manages health checks on your behalf which are used when you create an Alias record pointing to the ELB or S3
+   website bucket and enable the "Evaluate Target Health" parameter on the Alias record.
+
+2.
+
+
 Routing policies supported by Route53:
 1. Weighted Round Robin (WRR)
    Weighted Round Robin allows you to assign weights to resource record sets in order to specify the frequency with which different responses are
@@ -69,5 +78,17 @@ Features:
 
 14. Queries to Alias records are free of charge and it can be created for zone apex. For e. g. example.com in www.example.com is zone apex.
 
+15. HTTPS health checks support SNI.
+
+16. CloudWatch metrics for Route 53 health checks are available free of charge.
+
 Limits:
 1. Amazon Route 53 does not support DNSSEC for DNS at this time. But Amazon Route 53 allows DNSSEC on domain registration.
+2. You can associate any record type supported by Route 53 except SOA and NS records for health checks.
+3. Route 53 does not make routing decisions based on the load or available traffic capacity of your endpoints.
+4. The default is a threshold of three health check observations: when an endpoint has failed three consecutive observations, Route 53 will consider it failed
+5. By default, health check observations are conducted at an interval of 30 seconds. You can optionally select a fast interval of 10 seconds between observations.
+6. Route 53 health checks consider an HTTP 3xx code to be a successful response, so they don’t follow the redirect.
+7. The health check searches for the specified string in the body of the redirect. Because the health check doesn’t follow the redirect, it never sends a request to the location that the redirect points to and never gets a response from that location.
+8. Route 53 can only fail over to an endpoint that is healthy. If there are no healthy endpoints remaining in a resource record set, Route 53 will behave as if all health checks are passing.
+9. HTTPS health checks test whether it’s possible to connect with the endpoint over SSL and whether the endpoint returns a valid HTTP response code. However, they do not validate the SSL certificate returned by the endpoint.
