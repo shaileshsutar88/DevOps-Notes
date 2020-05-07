@@ -1,0 +1,37 @@
+Identity and Access Management
+AWS Identity and Access Management (IAM) enables you to manage access to AWS services and resources securely. Using IAM, you can create and manage
+AWS users and groups, and use permissions to allow and deny their access to AWS resources. IAM is a feature of your AWS account offered at no
+additional charge. You will be charged only for use of other AWS services by your users.
+
+Features:
+1. Enhanced security
+   IAM enables security best practices by allowing you to grant unique security credentials to users and groups to specify which AWS service APIs and
+   resources they can access. IAM is secure by default; users have no access to AWS resources until permissions are explicitly granted.
+
+2. Granular control
+   IAM provides the granularity to control a user’s access to specific AWS services and resources using permissions. For example, terminating EC2
+   instances or reading the contents of an Amazon S3 bucket.
+
+3. Temporary credentials
+   In addition to defining access permissions directly to users and groups, IAM lets you create roles. Roles allow you to define a set of permissions
+   and then let authenticated users or EC2 instances assume them, increasing your security posture by granting temporary access to the resources you
+   define.
+
+4. Analyze Access
+   IAM helps you analyze access across your AWS environment. Your security teams and administrators can use IAM Access Analyzer to identify resources
+   that can be accessed from outside an AWS account.
+
+5. Flexible security credential management
+   IAM allows you to authenticate users in several ways, depending on how they want to use AWS services. You can assign a range of security
+   credentials including passwords, key pairs, and X.509 certificates. You can also enforce multi-factor authentication (MFA) on users who access
+   the AWS Management Console or use APIs.
+
+6. Leverage external identity systems
+   You can use IAM to grant your employees and applications access to the AWS Management Console and to AWS service APIs, using your existing identity
+   systems. AWS supports federation from corporate systems like Microsoft Active Directory as well as standards-based identity providers.
+
+7. Seamlessly integrated into AWS services
+   IAM is integrated into most AWS services. This provides the ability to define access controls from one place in the AWS Management Console that
+   will take effect throughout your AWS environment.
+
+8. 
