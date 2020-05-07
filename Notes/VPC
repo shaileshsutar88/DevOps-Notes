@@ -1,0 +1,27 @@
+Virtual Private Cloud (VPC)
+Amazon Virtual Private Cloud (Amazon VPC) lets you provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a
+virtual network that you define. You have complete control over your virtual networking environment, including selection of your own IP address range,
+creation of subnets, and configuration of route tables and network gateways.
+
+Other Notes
+
+You can have up to five (5) nondefault Amazon VPCs per AWS account per AWS Region*.
+You can have up to four (4) secondary IP ranges per Amazon VPC*.
+You can create up to two hundred (200) subnets per Amazon VPC*.
+You can have up to five (5) Amazon VPC Elastic IP Addresses per AWS account per AWS Region*.
+
+Features:
+1. Default VPCs are attached to Internet and all instances launched in default subnets in the default VPC automatically receive public IP addresses.
+
+Notes:
+1. A subnet must reside within a single Availability Zone.
+2. Initial launch limit for amazon ec2 is 20.
+3. IP addresses for any stopped instances in a subnet are considered unavailable.
+4. Network interfaces can only be attached to instances residing in the same Availability Zone.
+5. You can attach and detach secondary interfaces (eth1-ethn) on an EC2 instance, but you can’t detach the eth0 interface.
+6. Peered VPCs must have non-overlapping IP ranges.
+7. VPC peering connections do not require an Internet Gateway.
+8. Security groups cannot be referenced across an Inter-Region VPC Peering connection.
+9. Inter-Region VPC Peering does not support IPv6.
+10. EC2-Classic instance cannot be linked to more than one VPC at the same time.
+11. The EC2 public DNS hostname will not resolve to the private IP address of the EC2-VPC instance when queried from an EC2-Classic instance, and vice-versa.
