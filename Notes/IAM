@@ -34,4 +34,28 @@ Features:
    IAM is integrated into most AWS services. This provides the ability to define access controls from one place in the AWS Management Console that
    will take effect throughout your AWS environment.
 
-8. 
+
+Group:
+A group is a collection of IAM users. Manage group membership as a simple list:
+Add users to or remove them from a group.
+A user can belong to multiple groups.
+Groups cannot belong to other groups.
+Groups can be granted permissions using access control policies. This makes it easier to manage permissions for a collection of users, rather than
+having to manage permissions for each individual user.
+Groups do not have security credentials, and cannot access web services directly; they exist solely to make it easier to manage user permissions.
+For details, see Working with Groups and Users.
+
+Users:
+Users are global entities, like an AWS account is today. User names are just ASCII strings that are unique within a given AWS account. You can assign
+names using any naming convention you choose, including email addresses. You can enforce strong passwords by requiring minimum length or at least one
+number. You can also enforce automatic password expiration, prevent re-use of old passwords, and require a password reset upon the next AWS sign-in.
+All limits are on the AWS account as a whole and not on users. if your AWS account has a limit of 20 Amazon EC2 instances, IAM users with EC2
+permissions can start instances up to the limit. You cannot limit what an individual user can do.
+
+
+IAM Role:
+An IAM role is an IAM entity that defines a set of permissions for making AWS service requests.  IAM roles are not associated with a specific user or
+group. Instead, trusted entities assume roles, such as IAM users, applications, or AWS services such as EC2.
+
+IAM roles allow you to delegate access with defined permissions to trusted entities without having to share long-term access keys. You can use IAM
+roles to delegate access to IAM users managed within your account, to IAM users under a different AWS account, or to an AWS service such as EC2.
