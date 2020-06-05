@@ -59,3 +59,42 @@ group. Instead, trusted entities assume roles, such as IAM users, applications, 
 
 IAM roles allow you to delegate access with defined permissions to trusted entities without having to share long-term access keys. You can use IAM
 roles to delegate access to IAM users managed within your account, to IAM users under a different AWS account, or to an AWS service such as EC2.
+
+An IAM user has permanent long-term credentials and is used to directly interact with AWS services. An IAM role does not have any credentials and
+cannot make direct requests to AWS services. IAM roles are meant to be assumed by authorized entities, such as IAM users, applications, or an AWS
+service such as EC2.
+
+
+What is the difference between an IAM role and an IAM user?
+An IAM user has permanent long-term credentials and is used to directly interact with AWS services. An IAM role does not have any credentials and
+cannot make direct requests to AWS services. IAM roles are meant to be assumed by authorized entities, such as IAM users, applications, or an AWS
+service such as EC2 or lambda.
+
+What is IAM roles for EC2 instances?
+IAM roles for EC2 instances enables your applications running on EC2 to make requests to AWS services such as Amazon S3, Amazon SQS, and Amazon SNS
+without you having to copy AWS access keys to every instance. IAM roles for EC2 instances provides the following features:
+1. AWS temporary security credentials to use when making requests from running EC2 instances to AWS services.
+2. Automatic rotation of the AWS temporary security credentials.
+3. Granular AWS service permissions for applications running on EC2 instances.
+
+What problem does IAM roles for EC2 instances solve?
+IAM roles for EC2 instances simplifies management and deployment of AWS access keys to EC2 instances. Using this feature, you associate an IAM role
+with an instance. Then your EC2 instance provides the temporary security credentials to applications running on the instance, and the applications
+can use these credentials to make requests securely to the AWS service resources defined in the role.
+
+What is a service-linked role?
+A service-linked role is a type of role that links to an AWS service (also known as a linked service) such that only the linked service can assume
+the role. Using these roles, you can delegate permissions to AWS services to create and manage AWS resources on your behalf.
+
+Can I assume a service-linked role?
+No. A service-linked role can be assumed only by the linked service. This is the reason why the trust policy of a service-linked role cannot be
+modified.
+
+Can I delete a service-linked role?
+Yes. If you no longer want an AWS service to perform actions on your behalf, you can delete its service-linked role. Before you delete the role, you
+must delete all AWS resources that depend on the role. This step ensures that you do not inadvertently delete a role required for your AWS resources
+to function properly.
+
+How do I delete a service-linked role?
+You can delete a service-linked role from the IAM console. Choose Roles in the navigation pane, choose the service-linked role that you want to
+delete, and choose Delete role. (Note: For Amazon Lex, you must use the Amazon Lex console to delete the service-linked role.)
