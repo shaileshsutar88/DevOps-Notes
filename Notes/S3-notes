@@ -51,3 +51,19 @@ S3 Storage Classes:
     Financial Services, Healthcare, and Public Sectors — that retain data sets for 7-10 years or longer to meet regulatory compliance, Can also be used for backup and disaster recovery use cases, and is a
     cost-effective and easy-to-manage alternative to magnetic tape systems, S3 Glacier Deep Archive are replicated and stored across at least three geographically-dispersed Availability Zones, Protected by
     99.999999999% of durability, and can be restored within 12 hours.
+
+S3 object lock:
+WORM model
+an object using a write once, read many model, then you can use S3 object lock object locks can be on individual objects or they can be applied across the bucket as a whole.
+
+Object locks come in two modes governance modes and compliance mode.
+If you're a member, governments mode users can't overwrite or delete an object version or alter its lock settings unless they have special permissions with compliance mode.
+Lock settings unless they have special permissions with compliance mode. Though a protected objects version can't be overwritten or deleted by any user, including the root user.
+
+
+S3 Glacier vault lock.
+It allows you to easily deploy and enforce compliance controls for individual S3 Glacier vault with a vault lock policy and you can specify controls such as wurm in a bolt lock policy and lock the policy
+from future edits. And once locked, the policy can no longer be changed. So really, you just need to go into your exam understanding the difference between object lock and S3.
+
+Glacier vault lock object lock is for S3 objects in S3 S3 glacier vault lock is four vault inside of Glacier. And then just remember with S3 Object Lock, you've got different modes, you've got your governance
+mode and you've got your compliance mode in and in compliance mode. Even the root user can't go And delete that object.
